@@ -81,6 +81,9 @@ showproduct(id:number){
 DeleteProduct(id:number){
  this.ProductService.DeleteProduct(id).subscribe();
 }
+// OpeenProductUpdate(pid:number){
+//   this.router.navigate(['/UpdateProduct',pid])
+//    }
 }
 
 

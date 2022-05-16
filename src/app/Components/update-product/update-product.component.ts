@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/Services/category.service';
 import { ProductService } from 'src/app/Services/product.service';
 import { ICategory } from 'src/app/ViewModels/icategory';
@@ -12,15 +12,23 @@ import { IProduct } from 'src/app/ViewModels/iproduct';
 })
 export class UpdateProductComponent implements OnInit {
 
-  updateddoudct: IProduct={} as IProduct;
+ //updateddoudct: IProduct={} as IProduct;
+ updateddoudct:IProduct|undefined=undefined;
   catList: ICategory[]=[];
-  constructor(private cateServ:CategoryService,private prodServ:ProductService , private router:Router) { 
+  private CurprdId:number=0;
+  constructor(private cateServ:CategoryService,private prodServ:ProductService , private ActivatedRoute:ActivatedRoute, private router:Router) { 
   }
 
   ngOnInit(): void {
     this.cateServ.getAllCateogories().subscribe(categoryList=>{
       this.catList=categoryList;
-    })
+    });
+  
+    this.ActivatedRoute.paramMap.subscribe(paramMap=>{
+      this.CurprdId= Number(paramMap.get("pid"));
+      this.updateddoudct=this.prodServ.getProductByID(this.CurprdId);
+    //  this.MyProduct=this.proservic.getProductByID(this.CurprdId);
+    });
   }
   onFileChange(event:any) {
   const reader = new FileReader();

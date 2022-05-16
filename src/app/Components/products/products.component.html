@@ -19,7 +19,7 @@
         <th scope="col">Image</th>
         <th scope="col">Quantity</th>
         <th scope="col">Price</th>
-        <th scope="col">Add</th>
+        <th scope="col">Detailes</th>
         <th scope="col">Update</th>
         <th scope="col"> Delete</th>
       </tr>
@@ -33,7 +33,9 @@
         <td> {{pro.quantity}}</td>
         <td> {{pro.price}}</td>
         <td><button type="button" class="btn btn-primary" > Detailes</button></td> 
-        <td><button type="button" class="btn btn-primary" > Update</button></td> 
+        <!-- <td><button type="button" class="btn btn-primary"  (click)="OpeenProductUpdate(pro.id)" > Update</button></td>  -->
+        <td><a type="button" class="btn btn-primary"  routerLink="/UpdateProduct/{{pro.id}}" > Update</a></td> 
+
         <td><button type="button" class="btn btn-primary" (click)="DeleteProduct(+pro.id)"> Delete</button></td> 
       </ng-container>
       </tr>
