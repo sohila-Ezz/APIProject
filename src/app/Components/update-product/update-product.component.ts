@@ -26,27 +26,27 @@ export class UpdateProductComponent implements OnInit {
   
     this.ActivatedRoute.paramMap.subscribe(paramMap=>{
       this.CurprdId= Number(paramMap.get("pid"));
-      this.updateddoudct=this.prodServ.getProductByID(this.CurprdId);
+      // this.updateddoudct=this.prodServ.getProductByID(this.CurprdId);
     //  this.MyProduct=this.proservic.getProductByID(this.CurprdId);
     });
   }
-  onFileChange(event:any) {
-  const reader = new FileReader();
-    console.log(reader);
-    if(event.target.files && event.target.files.length) {
-      const [file] = event.target.files;
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        this.updateddoudct.image = reader.result as string;
-      };
-    }
-  }
-  UpdateProduct(id:number)
-  {
-    console.log(this.updateddoudct);
-    this.prodServ.UpdateProduct(id,this.updateddoudct).subscribe(prd=>{
-      // this.router.navigate(['']);
-      // console.log(this.newPrdoudct);
-    });
-  }
-}
+  // onFileChange(event:any) {
+  // const reader = new FileReader();
+  //   console.log(reader);
+  //   if(event.target.files && event.target.files.length) {
+  //     const [file] = event.target.files;
+  //     reader.readAsDataURL(file);
+  //     reader.onload = () => {
+  //       this.updateddoudct.image = reader.result as string;
+  //     };
+  //   }
+  // }
+//   UpdateProduct(id:number)
+//   {
+//     console.log(this.updateddoudct);
+//     this.prodServ.UpdateProduct(id,this.updateddoudct).subscribe(prd=>{
+//       // this.router.navigate(['']);
+//       // console.log(this.newPrdoudct);
+//     });
+//   }
+ }

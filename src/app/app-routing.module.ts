@@ -20,6 +20,7 @@ const routes: Routes = [
     {path:'OrdersDetailes',component:OrderDetailesComponent},
     {path:'category', component:CategoryComponent},
     {path:'UpdateProduct/:pid', component:UpdateProductComponent},
+    {path:'AddProduct',component:AddProductComponent},
     // {path:'category/:pid', component:AddProductComponent},
 
     
